@@ -95,5 +95,26 @@ void pr_wait(int status)
  *-------------------------------------------------------*/
 #include <signal.h>
 
+void pr_mask(char *str)
+{
+	sigset_t sigset;
+	int errno_have;
+
+	errno_have = errno;
+	if (sigprocmask(0, NULL, &sigset) < 0)
+		err_sys("sigprocmask error");
+
+	printf("%s", str);
+
+	if (sigismember(&sigset,  SIGINT)) printf(" SIGINT ");
+	if (sigismember(&sigset, SIGALRM)) printf("SIGALRM ");
+	if (sigismember(&sigset, SIGUSR1)) printf("SIGUSR1 ");
+	if (sigismember(&sigset, SIGUSR2)) printf("SIGUSR2 ");
+	if (sigismember(&sigset, SIGQUIT)) printf("SIGQUIT ");
+
+	printf("\n");
+
+	errno = errno_have;
+}
 #endif
 

@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 			err_sys("fork error");
 		case 0:
 			sleep(2);
+			printf("child over...\n");
 			_exit(0);
 		default:
 			break;
