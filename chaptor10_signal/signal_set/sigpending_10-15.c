@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
 	/*
 	 *reset signal mask which unblocks SIGOUT
 	 */
+	printf("hekkk\n");
 	if (sigprocmask(SIG_SETMASK, &oldmask, NULL) < 0)
 		err_sys("sigprocmask error");
 	printf("SIGOUT unblocked\n");
