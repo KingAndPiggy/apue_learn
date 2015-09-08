@@ -1,0 +1,6 @@
+total 28
+drwxrwxr-x 2 king king  4096  9月  8 11:01 ./
+drwxrwxr-x 4 king king  4096  9月  8 10:52 ../
+-rw-rw-r-- 1 king king   681  9月  8 11:00 15-4-popen-more.c
+-rwxrwxr-x 1 king king 12345  9月  8 11:01 a.out*
+-rw-rw-r-- 1 king king     0  9月  8 11:01 test.txt
